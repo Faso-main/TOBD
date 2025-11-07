@@ -21,9 +21,12 @@ iris = pd.read_csv(DATASET_PATH)
 x = iris.iloc[:, [0, 1, 2, 3]].values
 
 # Анализ данных
-logger.info("Информация о датасете:")
-iris.info()
-logger.info("\nПервые 10 строк:")
+logger.info(iris.head(5))
+logger.info(iris.shape)
+logger.info(iris.dtypes)
+logger.info(iris.columns)
+logger.info(iris.info())
+logger.info(iris.describe())
 logger.info(iris[0:10])
 logger.info("\nРаспределение по видам:")
 iris_outcome = pd.crosstab(index=iris["species"], columns="count")
